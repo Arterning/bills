@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ning.money.book.mapper.MenuMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.ning.money.book.entity.RoleMenuEntity">
+        <id column="id" property="id"/>
+        <result column="group_id" property="groupId"/>
+        <result column="permission_id" property="permissionId"/>
+    </resultMap>
+
+    <select id="queryUserMenus" resultType="cn.ning.money.book.entity.MenuEntity">
+    select distinct m.*
+    from tb_menu m
+        LEFT JOIN tb_role_menu rm on rm.menu_id = m.id
+    WHERE
+        rm.role_id
+        in
+        (select ur.role_id
+        from tb_user u
+            LEFT JOIN tb_user_role ur on ur.user_id = u.id
+        where u.id = #{userId}
+        )
+        and m.delete_time is null
+    </select>
+
+    <select id="queryAllMenus" resultType="cn.ning.money.book.entity.MenuEntity">
+    select distinct m.*
+    from tb_menu m
+    </select>
+
+    <select id="queryRoleMenus" resultType="cn.ning.money.book.entity.MenuEntity">
+    select distinct m.*
+    from tb_menu m
+        LEFT JOIN tb_role_menu rm on rm.menu_id = m.id
+    WHERE
+        rm.role_id = #{roleId}
+        and rm.delete_time is null
+        and m.delete_time is null
+    </select>
+
+    <update id="notDelete">
+        update tb_menu set delete_time = null where id = #{id}
+    </update>
+</mapper>

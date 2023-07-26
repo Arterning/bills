@@ -1,0 +1,47 @@
+## 接口文档
+http://localhost:5000/api/doc.html#/home
+
+## 用户校验
+LoginRequiredAspect 读取token 并解析为UserInfo设置到ThreadLocal中
+用户登录的认证和鉴权是通过SpringBootSecurity来完成的，
+
+## 认证和鉴权流程
+
+`cn.ning.money.book.common.config.filter.JWTAuthenticationFilter.attemptAuthentication`
+
+>读取用户名和密码
+
+`cn.ning.money.book.common.config.sercurity.UserDetailsServiceImpl.loadUserByUsername`
+
+>从数据库读取
+
+
+`cn.ning.money.book.common.config.filter.JWTAuthenticationFilter.successfulAuthentication`
+
+>设置token并返回JSON
+
+`cn.ning.money.book.common.config.filter.JWTAuthorizationFilter.doFilterInternal`
+>解析Token
+
+`UserDetails` 
+>需要重写getPassword方法 就是通过实现这个方法SpringBootSecurity得以校验密码
+
+
+- [JWTAuthenticationFilter.java](src%2Fmain%2Fjava%2Fcn%2Fning%2Fmoney%2Fbook%2Fcommon%2Fconfig%2Ffilter%2FJWTAuthenticationFilter.java)
+- [JWTAuthorizationFilter.java](src%2Fmain%2Fjava%2Fcn%2Fning%2Fmoney%2Fbook%2Fcommon%2Fconfig%2Ffilter%2FJWTAuthorizationFilter.java)
+
+
+## 命名规范
+- VO：（View Object）视图对象，一般位于Controller层，用于展示视图。
+- DTO：（Data Transfer Object）数据传输对象， 即RPC 接口请求或传输出去的对象，用于展示层与服务层之间的数据传输对象。
+- BO：（Business Object）业务层对象，一般位于Service层，它与 DO 会有一定的属性差别。
+- PO：（Persistent Object）持久化对象，对象属性与数据库字段形成映射关系。
+- DO：（Domain Object）领域对象，就是从现实世界中抽象出来的有形或无形的业务实体，可以当成BO；（Data Object）数据层对象，对象属性与数据库字段形成映射关系，可以当成PO
+
+
+
+
+
+
+
+
