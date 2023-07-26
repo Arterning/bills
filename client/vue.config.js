@@ -105,7 +105,7 @@ const vueConfig = {
     // 路由代码
     proxy: {
       '/api': {
-        target: 'https://localhost:5000',
+        target: 'http://localhost:5000',
         ws: false,
         changeOrigin: true
       }
