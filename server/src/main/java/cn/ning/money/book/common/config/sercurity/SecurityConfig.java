@@ -47,6 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/register").permitAll() // 不拦截 /api/register 路径
+                .antMatchers("/hello").permitAll()
                 .anyRequest().authenticated();;
     }
 
@@ -64,7 +65,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/wx/login")
                 // 登录二维码不拦截
                 .antMatchers("/qrcode/**")
-                .antMatchers("/register");
+                .antMatchers("/register")
+                .antMatchers("/hello/**");
         web.expressionHandler(new DefaultWebSecurityExpressionHandler() {
             @Override
             protected SecurityExpressionOperations createSecurityExpressionRoot(Authentication authentication, FilterInvocation fi) {

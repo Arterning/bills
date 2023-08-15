@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.jackbin</groupId>
-    <artifactId>money-book</artifactId>
+    <artifactId>bills</artifactId>
     <version>0.0.1</version>
-    <name>money-book</name>
-    <description>money-book</description>
+    <name>bills</name>
+    <description>bills</description>
 
     <properties>
         <java.version>11</java.version>

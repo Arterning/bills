@@ -1,0 +1,11 @@
+###
+POST http://localhost:5000/api/register
+Content-Type: application/json
+
+{
+  "username": "safdaf",
+  "nickname": "sdfsdds",
+  "sex": 1,
+  "email": "asdf@aadf.com",
+  "password": "123122sdfadfs23"
+}

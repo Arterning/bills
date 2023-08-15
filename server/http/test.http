@@ -1,0 +1,6 @@
+###
+GET http://localhost:5000/api/hello
+
+
+###
+GET http://localhost:5000/api/hello/redis
