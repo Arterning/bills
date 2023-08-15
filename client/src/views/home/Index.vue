@@ -3,13 +3,34 @@
     <template v-slot:content>
       <div class="page-header-content">
         <div class="avatar">
-          <a-avatar size="large" :src="currentUser.avatarUrl"/>
+          <a-avatar size="large" :src="require('@/avatar.jpg')"/>
+        </div>
+        <div class="avatar">
+          <a-avatar size="large" :src="require('@/avatar.jpg')"/>
+        </div>
+        <div class="avatar">
+          <a-avatar size="large" :src="require('@/avatar.jpg')"/>
+        </div>
+        <div class="avatar">
+          <a-avatar size="large" :src="require('@/avatar.jpg')"/>
         </div>
         <div class="content">
           <div class="content-title">
-            {{ timeFix }}，{{ currentUser.username }}
+            老铁 {{ timeFix }}，{{ currentUser.username }}
           </div>
-          <div>take it boy ♂</div>
+          <div>take it boy ♂ 哦耶 ♂</div>
+        </div>
+        <div class="avatar">
+          <a-avatar size="large" :src="require('@/avatar.jpg')"/>
+        </div>
+        <div class="avatar">
+          <a-avatar size="large" :src="require('@/avatar.jpg')"/>
+        </div>
+        <div class="avatar">
+          <a-avatar size="large" :src="require('@/avatar.jpg')"/>
+        </div>
+        <div class="avatar">
+          <a-avatar size="large" :src="require('@/avatar.jpg')"/>
         </div>
       </div>
     </template>
