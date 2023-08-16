@@ -28,7 +28,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * 用户认证过滤器
+ * 只处理/user/login
+ */
 @Slf4j
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
@@ -41,13 +44,10 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
-        // 从输入流中获取到登录的信息
         try {
-            LoginVO loginVO = new ObjectMapper().readValue(request.getInputStream(), LoginVO.class);
-            return authenticationManager.authenticate(
-                    // 此处需要将密码加密验证
-                    new UsernamePasswordAuthenticationToken(loginVO.getUsername(), loginVO.getPassword())
-            );
+            LoginVO loginVO = new ObjectMapper().readValue(request.getInputStream(), LoginVO.class);// 从输入流中获取到登录的信息
+            UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(loginVO.getUsername(), loginVO.getPassword());
+            return authenticationManager.authenticate(token);
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -55,17 +55,22 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     }
 
     /**
-     * 成功调用的方法
+     * 用户认证成功调用的方法
+     * @param request
+     * @param response
+     * @param chain
+     * @param authResult
+     * @throws IOException
      */
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException {
         JWTUser jwtUser = (JWTUser) authResult.getPrincipal();
-        log.info("JWTUser:{}",jwtUser.toString());
+        log.info("JWTUser:{}", jwtUser.toString());
         List<String> permissionList = new ArrayList<>();
         jwtUser.getAuthorities().forEach(n -> permissionList.add(n.getAuthority()));
         // 通过获取Spring上下文来获取JWTConfig对象
         JWTConfig jwtConfig = SpringContextUtil.getBean(JWTConfig.class);
-        String token = jwtConfig.createToken(jwtUser.getId().toString(),permissionList);
+        String token = jwtConfig.createToken(jwtUser.getId().toString(), permissionList);
         UserService userService = SpringContextUtil.getBean(UserService.class);
         UserEntity userDO = userService.getById(jwtUser.getId());
         LoginSuccessVO vo = new LoginSuccessVO();
@@ -76,6 +81,14 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         response.getWriter().write(JSON.toJSONString(Result.success(vo)));
     }
 
+    /**
+     * 用户认证失败回调
+     * @param request
+     * @param response
+     * @param failed
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) throws IOException, ServletException {
         response.setCharacterEncoding("UTF-8");

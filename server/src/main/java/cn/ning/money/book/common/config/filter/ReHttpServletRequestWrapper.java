@@ -12,8 +12,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
-
+/**
+ * ReHttpServletRequestWrapper 类通过自定义的方式包装了 HttpServletRequest，重写了其中的 getInputStream 和 getReader 方法，
+ * 以提供对请求体的多次读取支持。这种自定义包装器的用例通常包括对请求体进行处理、修改或记录，以及在多次读取请求体内容时的一些特定需求。
+ */
 public class ReHttpServletRequestWrapper extends HttpServletRequestWrapper {
+
+    /**
+     * 把请求体缓存起来，以便多次读取，而不会影响后续的处理。
+     */
     private final byte[] bodyBuf;
 
     public ReHttpServletRequestWrapper(HttpServletRequest request) throws IOException {

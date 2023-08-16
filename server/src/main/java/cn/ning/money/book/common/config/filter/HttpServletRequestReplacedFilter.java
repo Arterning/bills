@@ -4,7 +4,10 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-
+/**
+ * 获取请求中的流如何，将取出来的字符串，再次转换成流，然后把它放入到新request对象中。
+ *
+ */
 public class HttpServletRequestReplacedFilter implements Filter {
 
     @Override
@@ -19,8 +22,7 @@ public class HttpServletRequestReplacedFilter implements Filter {
         if(request instanceof HttpServletRequest) {
             requestWrapper = new ReHttpServletRequestWrapper((HttpServletRequest) request);
         }
-        //获取请求中的流如何，将取出来的字符串，再次转换成流，然后把它放入到新request对象中。
-        // 在chain.doFiler方法中传递新的request对象
+
         if(requestWrapper == null) {
             chain.doFilter(request, response);
         } else {

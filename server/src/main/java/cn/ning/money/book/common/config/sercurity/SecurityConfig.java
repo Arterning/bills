@@ -38,6 +38,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
     }
 
+    /**
+     * permitAll没有绕过spring security，其中包含了登录的以及匿名的。
+     * 这里的代码表示register没有任何权限也可以访问
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
@@ -47,10 +53,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/register").permitAll() // 不拦截 /api/register 路径
-                .antMatchers("/hello").permitAll()
                 .anyRequest().authenticated();;
     }
 
+    /**
+     * 配置哪些请求可以被过滤
+     * ingore是完全绕过了spring security的所有filter，相当于不走spring security
+     * @param web
+     * @throws Exception
+     */
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
@@ -66,7 +77,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 登录二维码不拦截
                 .antMatchers("/qrcode/**")
                 .antMatchers("/register")
-                .antMatchers("/hello/**");
+                .antMatchers("/test/**");
         web.expressionHandler(new DefaultWebSecurityExpressionHandler() {
             @Override
             protected SecurityExpressionOperations createSecurityExpressionRoot(Authentication authentication, FilterInvocation fi) {
@@ -77,6 +88,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         });
     }
 
+    /**
+     * 返回跨域配置
+     * 所谓的Cors配置，就是用来限制请求只能从哪些源过来
+     * cfg.addAllowedHeader("*")：允许所有的请求头。
+     * cfg.addAllowedMethod("*")：允许所有的 HTTP 方法。
+     * cfg.addAllowedOriginPattern("*")：允许来自任何源的请求。
+     * cfg.setAllowCredentials(true)：允许发送身份验证凭证（如 cookies、HTTP 认证等）。
+     * cfg.checkOrigin("*")：对来源进行检查，允许所有来源。
+     * @return
+     */
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         return req -> {
@@ -89,4 +110,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             return cfg;
         };
     }
+
 }

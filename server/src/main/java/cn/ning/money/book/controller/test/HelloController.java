@@ -23,7 +23,7 @@ import java.util.List;
 
 @RestController
 @Api(value = "HelloController", tags = { "测试接口"})
-@RequestMapping("/hello")
+@RequestMapping("/test/hello")
 @AllArgsConstructor
 public class HelloController {
 

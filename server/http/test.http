@@ -1,13 +1,13 @@
 ###
-GET http://localhost:5000/api/hello
+GET http://localhost:5000/api/test/hello
 
 
 ###
-GET http://localhost:5000/api/hello/redis
+GET http://localhost:5000/api/test/hello/redis
 
 
 ###
-POST http://localhost:5000/api/hello/post
+POST http://localhost:5000/api/test/hello/post
 Content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:5000/api/hello/pageQuery
+POST http://localhost:5000/api/test/hello/pageQuery
 Content-Type: application/json
 
 {

@@ -28,7 +28,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * 用户鉴权过滤器
+ */
 @Slf4j
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
