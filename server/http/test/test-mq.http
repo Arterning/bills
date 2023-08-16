@@ -1,0 +1,7 @@
+###
+GET http://localhost:5000/api/test/mq/send?msg=asdkee
+
+
+
+###
+GET http://localhost:5000/api/test/mq/sendTopic?msg=美女图片&route=topicExchange.topicImages
