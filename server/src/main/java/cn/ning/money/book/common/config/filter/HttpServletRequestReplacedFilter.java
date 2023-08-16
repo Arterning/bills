@@ -1,5 +1,7 @@
 package cn.ning.money.book.common.config.filter;
 
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;

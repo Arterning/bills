@@ -1,0 +1,11 @@
+###
+POST http://localhost:5000/api/test/upload
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="panda.png"
+
+< panda.png
+
+--boundary
+Content-Disposition: form-data; name="extraInfo";

@@ -177,7 +177,24 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>7.1.2</version>
+        </dependency>
+
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>
