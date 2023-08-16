@@ -18,3 +18,13 @@ Content-Type: application/json
   "money": 0.0,
   "birthday": "2023-08-12"
 }
+
+
+###
+POST http://localhost:5000/api/hello/pageQuery
+Content-Type: application/json
+
+{
+  "pageIndex": 0,
+  "pageSize": 2
+}

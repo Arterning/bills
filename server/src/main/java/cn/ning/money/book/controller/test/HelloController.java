@@ -4,8 +4,11 @@ import cn.ning.money.book.entity.RoleEntity;
 import cn.ning.money.book.mapper.RecordDetailMapper;
 import cn.ning.money.book.mapper.RoleMapper;
 import cn.ning.money.book.utils.RedisUtil;
+import cn.ning.money.book.vo.PageVO;
 import cn.ning.money.book.vo.Result;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.google.common.collect.Lists;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -75,6 +78,21 @@ public class HelloController {
         objectQueryWrapper.eq("name", "root");
         RoleEntity roleEntity = roleMapper.selectOne(objectQueryWrapper);
         return Result.success(roleEntity);
+    }
+
+
+    /**
+     * 分页查询
+     * 测试发现使用@GetMapping居然也可以接收到JSON请求体
+     * 不过这并不是标准做法
+     * @param pageVO
+     * @return
+     */
+    @PostMapping("pageQuery")
+    public Result<?> pageQuery(@RequestBody PageVO pageVO) {
+        Page<RoleEntity> page = new Page<>(pageVO.getPageIndex(), pageVO.getPageSize()); // 创建分页对象
+        IPage<RoleEntity> userPage = roleMapper.selectPage(page, null); // 执行分页查询
+        return Result.success(userPage);
     }
 
 
