@@ -10,9 +10,7 @@ import com.google.common.collect.Lists;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.*;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -53,6 +51,13 @@ public class HelloController {
                 .sex("man").build();
         redisUtil.set("obj", object);
         Object obj = redisUtil.get("obj");
+        return Result.success(obj);
+    }
+
+    @PostMapping("post")
+    public Result<?> post(@RequestBody TestRedisObject postObject) {
+        redisUtil.set("postObject", postObject);
+        Object obj = redisUtil.get("postObject");
         return Result.success(obj);
     }
 

@@ -4,3 +4,17 @@ GET http://localhost:5000/api/hello
 
 ###
 GET http://localhost:5000/api/hello/redis
+
+
+###
+POST http://localhost:5000/api/hello/post
+Content-Type: application/json
+
+{
+  "name": "sfdd",
+  "sex": "w233",
+  "age": "233",
+  "id": 0,
+  "money": 0.0,
+  "birthday": "2023-08-12"
+}
