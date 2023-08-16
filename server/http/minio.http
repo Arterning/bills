@@ -1,4 +1,6 @@
-###
+
+
+### 上传文件
 POST http://localhost:5000/api/test/upload
 Content-Type: multipart/form-data; boundary=boundary
 
@@ -8,4 +10,25 @@ Content-Disposition: form-data; name="file"; filename="panda.png"
 < panda.png
 
 --boundary
-Content-Disposition: form-data; name="extraInfo";
+Content-Disposition: form-data; name="extraInfo";value="sddd"
+
+
+### 上传文件
+# curl --location 'http://localhost:5000/api/test/upload/'
+#--form 'file=@"/C:/Users/china/Pictures/panda.png"'
+#--form 'extra="asdfasdf"'
+POST http://localhost:5000/api/test/upload/
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="/C:/Users/china/Pictures/panda.png"
+
+< panda.png
+--WebAppBoundary
+Content-Disposition: form-data; name="extra"
+
+"asdfasdf"
+--WebAppBoundary--
+
+###
+

@@ -24,7 +24,7 @@ spring:
         min-idle: 0 # 连接池中的最小空闲连接 默认 0
 
   minio:
-    url: http://localhost:9001
+    url: http://localhost:9000
     access-key: minioadmin
     secret-key: minioadmin
 
