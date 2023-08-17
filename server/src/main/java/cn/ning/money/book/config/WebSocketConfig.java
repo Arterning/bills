@@ -1,4 +1,4 @@
-package cn.ning.money.book.common.config;
+package cn.ning.money.book.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

@@ -1,7 +1,7 @@
-package cn.ning.money.book.common.config.sercurity;
+package cn.ning.money.book.config.sercurity;
 
-import cn.ning.money.book.common.config.filter.JWTAuthenticationFilter;
-import cn.ning.money.book.common.config.filter.JWTAuthorizationFilter;
+import cn.ning.money.book.config.filter.JWTAuthenticationFilter;
+import cn.ning.money.book.config.filter.JWTAuthorizationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.access.expression.SecurityExpressionOperations;

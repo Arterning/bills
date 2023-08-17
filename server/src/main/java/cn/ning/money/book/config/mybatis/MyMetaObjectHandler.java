@@ -1,4 +1,4 @@
-package cn.ning.money.book.common.config.mybatis;
+package cn.ning.money.book.config.mybatis;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import lombok.extern.slf4j.Slf4j;

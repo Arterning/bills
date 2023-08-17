@@ -1,10 +1,10 @@
-package cn.ning.money.book.common.config.filter;
+package cn.ning.money.book.config.filter;
 
 import cn.ning.money.book.common.LocalUserId;
 import cn.ning.money.book.constant.CodeMsg;
 import cn.ning.money.book.exception.BusinessException;
 import cn.ning.money.book.utils.SpringContextUtil;
-import cn.ning.money.book.common.config.sercurity.JWTConfig;
+import cn.ning.money.book.config.sercurity.JWTConfig;
 import cn.ning.money.book.vo.Result;
 import cn.ning.money.book.exception.BaseException;
 import cn.ning.money.book.exception.ParameterException;

@@ -1,4 +1,4 @@
-package cn.ning.money.book.common.config;
+package cn.ning.money.book.config;
 
 import cn.ning.money.book.constant.CodeMsg;
 import cn.ning.money.book.vo.Result;

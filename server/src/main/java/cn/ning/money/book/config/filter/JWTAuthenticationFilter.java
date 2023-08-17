@@ -1,7 +1,7 @@
-package cn.ning.money.book.common.config.filter;
+package cn.ning.money.book.config.filter;
 
-import cn.ning.money.book.common.config.sercurity.JWTConfig;
-import cn.ning.money.book.common.config.sercurity.JWTUser;
+import cn.ning.money.book.config.sercurity.JWTConfig;
+import cn.ning.money.book.config.sercurity.JWTUser;
 import cn.ning.money.book.constant.CodeMsg;
 import cn.ning.money.book.vo.LoginVO;
 import cn.ning.money.book.vo.LoginSuccessVO;

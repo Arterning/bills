@@ -1,4 +1,4 @@
-package cn.ning.money.book.common.config;
+package cn.ning.money.book.config;
 
 import cn.ning.money.book.constant.CodeMsg;
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;

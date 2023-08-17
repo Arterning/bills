@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class WebSocketController {
 
-    @MessageMapping("/hello")
-    @SendTo("/topic/greetings")
+    @MessageMapping("/send/message")
+    @SendTo("/topic/messages")
     public String greeting(String message) {
         return "Hello, " + message + "!";
     }

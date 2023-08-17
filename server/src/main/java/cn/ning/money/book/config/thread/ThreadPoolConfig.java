@@ -1,4 +1,4 @@
-package cn.ning.money.book.common.config.thread;
+package cn.ning.money.book.config.thread;
 
 import cn.ning.money.book.utils.ThreadUtil;
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;

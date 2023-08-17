@@ -1,4 +1,4 @@
-package cn.ning.money.book.common.config.sercurity;
+package cn.ning.money.book.config.sercurity;
 
 import cn.ning.money.book.bo.UserMenuBO;
 import com.alibaba.fastjson.JSON;

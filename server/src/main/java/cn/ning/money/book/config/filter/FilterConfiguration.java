@@ -1,4 +1,4 @@
-package cn.ning.money.book.common.config.filter;
+package cn.ning.money.book.config.filter;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;

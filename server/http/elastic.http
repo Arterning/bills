@@ -1,0 +1,41 @@
+GET http://localhost:9200
+
+###
+
+# curl --location 'http://localhost:9200'
+#--header 'Authorization: Basic ZWxhc3RpYzoxMjM0NTY='
+GET http://localhost:9200
+Authorization: Basic ZWxhc3RpYzoxMjM0NTY=
+
+### query all index
+GET http://localhost:9200/_cat/indices?v
+Authorization: Basic ZWxhc3RpYzoxMjM0NTY=
+
+### 新建一个名叫weather的 Index。
+PUT http://localhost:9200/weather
+Authorization: Basic ZWxhc3RpYzoxMjM0NTY=
+
+### Remove index
+DELETE localhost:9200/weather
+Authorization: Basic ZWxhc3RpYzoxMjM0NTY=
+
+
+###
+# curl -X PUT 'localhost:9200/accounts/person/1' -d '
+#{
+#  "user": "张三",
+#  "title": "工程师",
+#  "desc": "数据库管理"
+#}'
+PUT localhost:9200/accounts/person/1
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic ZWxhc3RpYzoxMjM0NTY=
+
+{
+  "user": "张三",
+  "title": "工程师",
+  "desc": "数据库管理"
+}
+
+###
+

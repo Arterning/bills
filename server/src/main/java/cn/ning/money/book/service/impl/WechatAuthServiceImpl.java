@@ -1,6 +1,6 @@
 package cn.ning.money.book.service.impl;
 
-import cn.ning.money.book.common.config.sercurity.JWTConfig;
+import cn.ning.money.book.config.sercurity.JWTConfig;
 import cn.ning.money.book.common.manager.AsyncManager;
 import cn.ning.money.book.constant.RedisKey;
 import cn.ning.money.book.constant.UrlConstant;

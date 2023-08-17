@@ -1,7 +1,7 @@
 package cn.ning.money.book.common.aspect;
 
 import cn.ning.money.book.common.LocalUser;
-import cn.ning.money.book.common.config.sercurity.JWTConfig;
+import cn.ning.money.book.config.sercurity.JWTConfig;
 import cn.ning.money.book.constant.CodeMsg;
 import cn.ning.money.book.entity.UserEntity;
 import cn.ning.money.book.exception.NotFoundException;

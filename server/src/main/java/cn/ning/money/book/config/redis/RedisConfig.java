@@ -1,4 +1,4 @@
-package cn.ning.money.book.common.config.redis;
+package cn.ning.money.book.config.redis;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

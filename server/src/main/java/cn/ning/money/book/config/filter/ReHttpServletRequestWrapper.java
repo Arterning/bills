@@ -1,4 +1,4 @@
-package cn.ning.money.book.common.config.filter;
+package cn.ning.money.book.config.filter;
 
 import cn.ning.money.book.utils.ServletUtil;
 
