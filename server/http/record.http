@@ -1,0 +1,29 @@
+### 获取某个月份的支出和收入
+GET http://localhost:5000/api/home/spendTotalInMonth/2023-03
+token: {{token}}
+
+### 获取某个月份前三消费类别
+GET http://localhost:5000/api/home/topThreeSpendCategoryTotal/2023-03
+token: {{token}}
+
+### 获取所有花费类别
+GET http://localhost:5000/api/spendCategory
+token: {{token}}
+
+
+### 获取所有记账类别
+GET http://localhost:5000/api/recordType
+token: {{token}}
+
+
+### 新增记账记录
+POST http://localhost:5000/api/record
+token: {{token}}
+Content-Type: application/json
+
+{
+  "spendCategoryId": 5,
+  "amount": 520.0,
+  "occurTime": "2023-03-04",
+  "remark": "eat food"
+}
