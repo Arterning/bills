@@ -77,6 +77,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 登录二维码不拦截
                 .antMatchers("/qrcode/**")
                 .antMatchers("/register")
+                .antMatchers("/**/*.html")
                 .antMatchers("/test/**");
         web.expressionHandler(new DefaultWebSecurityExpressionHandler() {
             @Override

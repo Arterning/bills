@@ -1,0 +1,28 @@
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        var socket = new WebSocket('ws://localhost:5000/ws');
+
+        socket.onopen = function(event) {
+            console.log('WebSocket connection opened:', event);
+        };
+
+        socket.onmessage = function(event) {
+            var message = event.data;
+            console.log('Received message:', message);
+        };
+
+        socket.onclose = function(event) {
+            console.log('WebSocket connection closed:', event);
+        };
+
+    </script>
+</head>
+<body>
+<h1>welcome</h1>
+</body>
+</html>
