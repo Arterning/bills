@@ -1,4 +1,4 @@
-package cn.ning.money.book.controller.minio;
+package cn.ning.money.book.modules.minio;
 
 import cn.ning.money.book.vo.Result;
 import lombok.extern.slf4j.Slf4j;

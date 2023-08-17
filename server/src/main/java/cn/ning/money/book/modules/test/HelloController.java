@@ -1,4 +1,4 @@
-package cn.ning.money.book.controller.test;
+package cn.ning.money.book.modules.test;
 
 import cn.ning.money.book.entity.RoleEntity;
 import cn.ning.money.book.mapper.RecordDetailMapper;

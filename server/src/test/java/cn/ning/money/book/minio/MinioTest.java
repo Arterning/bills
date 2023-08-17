@@ -1,6 +1,6 @@
 package cn.ning.money.book.minio;
 
-import cn.ning.money.book.controller.minio.MinioService;
+import cn.ning.money.book.modules.minio.MinioService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

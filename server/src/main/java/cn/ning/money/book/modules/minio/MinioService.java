@@ -1,4 +1,4 @@
-package cn.ning.money.book.controller.minio;
+package cn.ning.money.book.modules.minio;
 
 import io.minio.MinioClient;
 import io.minio.PutObjectArgs;
