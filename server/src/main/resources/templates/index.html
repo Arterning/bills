@@ -1,11 +1,12 @@
-<html>
-
-
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>Thymeleaf Example</title>
 </head>
 <body>
-<h1>welcome</h1>
+<h1 th:text="${message}">Hello, World!</h1>
+<h2 th:text="${data.name}"></h2>
+<h2 th:text="${data.sex}"></h2>
+<h2 th:text="${data.message}"></h2>
 </body>
 </html>
