@@ -1,0 +1,14 @@
+###
+GET http://localhost:5000/api/test/contacts
+
+
+###
+POST http://localhost:5000/api/test/contacts
+Content-Type: application/json
+
+{
+  "id": "23",
+  "firstName": "df",
+  "lastName": "sdf",
+  "email": "sddd"
+}
