@@ -7,6 +7,14 @@ GET http://localhost:5000/api/test/hello/redis
 
 
 ###
+GET http://localhost:5000/api/test/hello/cacheService
+
+
+###
+GET http://localhost:5000/api/test/hello/list
+
+
+###
 POST http://localhost:5000/api/test/hello/post
 Content-Type: application/json
 

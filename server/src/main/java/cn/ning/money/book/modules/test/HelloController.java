@@ -33,12 +33,21 @@ public class HelloController {
 
     RoleMapper roleMapper;
 
+    CacheService cacheService;
+
 
     @ApiOperation(value = "你爱我 我爱你")
     @GetMapping()
     public Result<?> hello() {
         return Result.success("你爱我，我爱你");
     }
+
+    @GetMapping("cacheService")
+    public Result<?> cacheService() {
+        List<?> cacheList = cacheService.getCacheList("roleList");
+        return Result.success(cacheList);
+    }
+
 
     @GetMapping("redis")
     public Result<?> redis() {
