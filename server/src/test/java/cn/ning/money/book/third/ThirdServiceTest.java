@@ -1,6 +1,7 @@
 package cn.ning.money.book.third;
 
 
+import cn.ning.money.book.third.api.RefreshTokenResponse;
 import cn.ning.money.book.third.api.ThirdPartyService;
 import cn.ning.money.book.third.api.TokenResponse;
 import cn.ning.money.book.third.express.ExpressServiceClient;
@@ -27,8 +28,8 @@ public class ThirdServiceTest {
 
     @Test
     void test_refresh_token() {
-        String result = thirdService.refreshToken("MWVlNDUyNTUxM2FjM2RhNmFjZjI0MjUzYTVmYzNiYjUwN2Y4MWZmMC0yNzJiLTQ1ZDAtOGExMi02NDBhOTU4N2ZkNzU");
-        System.out.println(result);
+        RefreshTokenResponse result = thirdService.refreshToken("MWVlNDUyNTUxM2FjM2RhNmFjZjI0MjUzYTVmYzNiYjUwN2Y4MWZmMC0yNzJiLTQ1ZDAtOGExMi02NDBhOTU4N2ZkNzU");
+        System.out.println(JSON.toJSONString(result));
     }
 
     @Test

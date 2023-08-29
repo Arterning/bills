@@ -25,11 +25,11 @@ public class ThirdPartyService {
         return tokenResponse;
     }
 
-    public String refreshToken(String refreshToken) {
+    public RefreshTokenResponse refreshToken(String refreshToken) {
         RefreshTokenRequest requestObject = new RefreshTokenRequest();
         requestObject.setAppId(appId);
         String refresh = "Bearer " + refreshToken;
-        String result = thirdPartyClient.refreshToken(refresh, requestObject);
+        RefreshTokenResponse result = thirdPartyClient.refreshToken(refresh, requestObject);
         return result;
     }
 

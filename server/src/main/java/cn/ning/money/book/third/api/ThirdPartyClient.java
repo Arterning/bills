@@ -16,7 +16,7 @@ public interface ThirdPartyClient {
 
 
     @PostMapping(value = "/uc/v1/access/api/token/refresh", consumes = MediaType.APPLICATION_JSON_VALUE)
-    String refreshToken(@RequestHeader("Authorization") String refreshToken,  @RequestBody RefreshTokenRequest request);
+    RefreshTokenResponse refreshToken(@RequestHeader("Authorization") String refreshToken,  @RequestBody RefreshTokenRequest request);
 
 
 }
