@@ -20,6 +20,7 @@ public class ThirdServiceTest {
     @Resource
     ExpressServiceClient expressServiceClient;
 
+    //登录。心跳检测。内部使用的关闭接口，10秒钟期限
     @Test
     void test_login() {
         TokenResponse result = thirdService.login();
