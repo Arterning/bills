@@ -2,7 +2,7 @@ package cn.ning.money.book.third.api;
 
 import java.util.List;
 
-public class TokenResponse {
+public class LoginResponse {
 
     private int code;
     private String message;
